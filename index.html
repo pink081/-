@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>บ้านทุ่งอาหารอีสาน | Baan Thung Isan Food</title>
+  <meta name="description" content="บ้านทุ่งอาหารอีสาน รสแซ่บแท้สูตรโบราณ ริมทุ่งนาร่มรื่น ลมเย็นสบาย เมนูส้มตำ ลาบ ไก่ย่าง เครื่องดื่มสมุนไพรอัญชัน มะตูม ใบเตย">
+  
+  <!-- Google Fonts: Prompt & Sarabun -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            isan: {
+              green: '#2d6a4f',
+              darkgreen: '#1b4332',
+              lightgreen: '#52b788',
+              bamboo: '#d4a373',
+              bamboolight: '#faedcd',
+              red: '#b91c1c',
+              indigo: '#1e3a8a',
+              amber: '#eab308'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#f8faf5] text-stone-800 antialiased min-h-screen flex flex-col">
+
+  <!-- ลวดลายผ้าขาวม้าคาดด้านบนสุดของเว็บ (Pha Khao Ma Top Ribbon) -->
+  <div class="pha-khao-ma-border"></div>
+
+  <!-- แถบนำทางด้านบน (Navigation Header) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm transition">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      
+      <!-- โลโก้และชื่อร้าน -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-xl bg-isan-green text-white flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition">
+          🌾
+        </div>
+        <div>
+          <h1 class="text-lg md:text-xl font-bold text-stone-900 group-hover:text-isan-green transition leading-tight">
+            บ้านทุ่งอาหารอีสาน
+          </h1>
+          <p class="text-[11px] text-stone-500 font-medium hidden sm:block">
+            Baan Thung Isan Food
+          </p>
+        </div>
+      </a>
+
+      <!-- ปุ่มสลับภาษา และป้ายสถานะ -->
+      <div class="flex items-center gap-2 md:gap-3">
+        <!-- ป้ายสถานะเปิด-ปิด (จะถูกคำนวณโดย script.js) -->
+        <div id="business-status-badge" class="hidden sm:inline-flex items-center">
+          <!-- โหลดผ่าน JS -->
+        </div>
+
+        <!-- ปุ่มสลับภาษา TH / EN -->
+        <div class="flex items-center bg-stone-100 p-0.5 rounded-full border border-stone-200">
+          <button 
+            id="btn-lang-th" 
+            type="button" 
+            class="px-3 py-1.5 text-xs font-semibold rounded-full bg-isan-green text-white shadow-sm transition cursor-pointer"
+          >
+            🇹🇭 TH
+          </button>
+          <button 
+            id="btn-lang-en" 
+            type="button" 
+            class="px-3 py-1.5 text-xs font-semibold rounded-full text-stone-600 hover:text-isan-green transition cursor-pointer"
+          >
+            🇬🇧 EN
+          </button>
+        </div>
+
+        <!-- ปุ่มสำหรับเปิดป้าย QR Code ตั้งโต๊ะ -->
+        <button 
+          onclick="openQrModal()" 
+          title="พิมพ์ป้าย QR Code สำหรับตั้งโต๊ะ"
+          class="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full border border-stone-300 text-stone-700 hover:bg-stone-50 transition cursor-pointer"
+        >
+          <span>📱</span>
+          <span data-i18n="btnPrint">ป้าย QR ตั้งโต๊ะ</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ส่วนต้อนรับ (Hero Section) บรรยากาศทุ่งนาร่มรื่น ลมเย็นสบาย -->
+  <section class="relative bg-stone-900 text-white overflow-hidden">
+    <!-- ภาพพื้นหลังทุ่งนาเขียวขจี -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&auto=format&fit=crop&q=80" 
+        alt="ทุ่งนาสีเขียว ลมเย็นสบาย" 
+        class="w-full h-full object-cover opacity-45 scale-105 transition duration-1000"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/60 to-transparent"></div>
+    </div>
+
+    <!-- เนื้อหาใน Hero Section -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-14 sm:py-20 text-center">
+      <!-- ป้ายคุณลักษณะเด่น -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs md:text-sm text-emerald-200 mb-4 shadow-sm">
+        <span data-i18n="heroBadge">🌿 อาหารอีสานแท้ • ผ้าไหมผ้าขาวม้า • เครื่องดื่มสมุนไพร</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-md text-amber-50">
+        <span data-i18n="heroTitle">บ้านทุ่งอาหารอีสาน</span>
+      </h2>
+
+      <p class="text-base sm:text-xl text-stone-200 max-w-2xl mx-auto font-light leading-relaxed mb-6 drop-shadow">
+        <span data-i18n="heroSubtitle">รสแซ่บแท้สูตรโบราณ ริมทุ่งนาร่มรื่น ลมเย็นสบาย</span>
+      </p>
+
+      <!-- ป้ายเตือนเวลาเปิด-ปิด บนมือถือ -->
+      <div class="inline-block bg-white/15 backdrop-blur-md border border-white/20 px-4 py-2 rounded-2xl text-xs sm:text-sm text-stone-100 mb-6">
+        <span class="font-semibold text-amber-300">⏰ เวลาเปิด-ปิด:</span>
+        <span data-i18n="hoursSummary">เปิดทุกวัน 08:00 - 17:00 น. (หยุดทุกวันอังคาร)</span>
+      </div>
+
+      <!-- ปุ่ม Action ทางลัด -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a 
+          href="#menu-section" 
+          class="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm shadow-lg transition transform hover:-translate-y-0.5"
+        >
+          📖 ดูเมนูอาหาร & เครื่องดื่ม
+        </a>
+        <a 
+          href="#atmosphere-section" 
+          class="px-5 py-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium text-sm border border-white/30 transition"
+        >
+          🌾 บรรยากาศร้าน
+        </a>
+      </div>
+    </div>
+
+    <!-- ลายผ้าขาวม้าคาดด้านล่าง Hero -->
+    <div class="pha-khao-ma-border"></div>
+  </section>
+
+  <!-- กล่องคำแนะนำสำหรับลูกค้าที่สแกนจากโต๊ะอาหาร -->
+  <section class="max-w-6xl mx-auto px-4 -mt-6 relative z-20">
+    <div class="bg-white rounded-2xl p-4 md:p-5 shadow-lg border border-stone-200/90 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center text-2xl shrink-0">
+          🍽️
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 text-base" data-i18n="tableNoticeTitle">
+            สแกนดูเมนูจากโต๊ะอาหาร
+          </h3>
+          <p class="text-xs md:text-sm text-stone-500" data-i18n="tableNoticeDesc">
+            เลือกดูเมนูและราคาได้ตามสบาย จากนั้นแจ้งรายการกับพนักงานได้ทันทีครับ
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <span class="text-xs px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 font-medium border border-emerald-200">
+          ✓ ระบุราคาชัดเจน
+        </span>
+        <span class="text-xs px-3 py-1.5 rounded-full bg-blue-50 text-blue-800 font-medium border border-blue-200">
+          ✓ เมนู 2 ภาษา (TH / EN)
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ส่วนเมนูอาหาร & เครื่องดื่ม (Menu Section) -->
+  <main id="menu-section" class="max-w-6xl mx-auto px-4 py-10 flex-1 w-full">
+    
+    <!-- แถบเครื่องมือ: ค้นหา & หมวดหมู่แบบ Sticky -->
+    <div class="sticky top-[61px] z-30 bg-[#f8faf5]/95 backdrop-blur-md pt-2 pb-4 border-b border-stone-200/80 mb-6">
+      
+      <!-- ช่องค้นหาเมนู -->
+      <div class="relative max-w-md mx-auto mb-3">
+        <input 
+          id="search-input" 
+          type="text" 
+          placeholder="ค้นหาเมนูอาหาร หรือเครื่องดื่ม..."
+          class="w-full pl-10 pr-4 py-2.5 text-sm rounded-full bg-white border border-stone-300 focus:outline-none focus:ring-2 focus:ring-isan-green focus:border-transparent shadow-sm transition"
+        />
+        <div class="absolute left-3.5 top-3 text-stone-400 text-sm">
+          🔍
+        </div>
+      </div>
+
+      <!-- แถบเลื่อนหมวดหมู่เมนู (Horizontal Scrollable Pills) -->
+      <div id="categories-container" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+        <!-- เรนเดอร์ด้วย script.js -->
+      </div>
+    </div>
+
+    <!-- แถบแสดงจำนวนรายการ -->
+    <div class="flex items-center justify-between mb-6 px-1">
+      <div id="menu-count" class="text-xs md:text-sm text-stone-500 font-medium">
+        กำลังโหลดรายการเมนู...
+      </div>
+      <div class="text-xs text-stone-400">
+        💡 แตะที่เมนูเพื่อดูรูปใหญ่และรายละเอียด
+      </div>
+    </div>
+
+    <!-- กริดแสดงการ์ดรายการเมนูอาหาร & เครื่องดื่ม -->
+    <div id="menu-items-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- เรนเดอร์การ์ดด้วย script.js -->
+    </div>
+  </main>
+
+  <!-- ส่วนบรรยากาศร้าน (Atmosphere Section) -->
+  <section id="atmosphere-section" class="bg-stone-100/80 py-14 border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-semibold uppercase tracking-wider text-isan-green">Vibe & Atmosphere</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-900 mt-1 mb-3" data-i18n="atmosphereTitle">
+          บรรยากาศร้านบ้านทุ่ง
+        </h2>
+        <p class="text-sm text-stone-600" data-i18n="atmosphereSubtitle">
+          นั่งชิลริมทุ่งนา ลมพัดเย็นสบาย ผ่อนคลายกับมุมตกแต่งผ้าไหมและผ้าขาวม้า
+        </p>
+      </div>
+
+      <!-- กริดแสดงรูปบรรยากาศร้าน -->
+      <div id="atmosphere-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- เรนเดอร์ด้วย script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ส่วนข้อมูลร้าน & เวลาเปิด-ปิด & พิกัด (Info & Contact Section) -->
+  <section id="contact-section" class="max-w-6xl mx-auto px-4 py-12 w-full">
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-stone-200/90 shadow-sm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        
+        <!-- ฝั่งซ้าย: ข้อมูลเวลาเปิด-ปิดและช่องทางติดต่อ -->
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-isan-green">Restaurant Info</span>
+          <h3 class="text-2xl font-bold text-stone-900 mt-1 mb-4" data-i18n="contactHeading">
+            ข้อมูลร้าน & พิกัดบ้านทุ่ง
+          </h3>
+
+          <div class="space-y-4 text-sm text-stone-600 mb-6">
+            <!-- เวลาเปิดปิด -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 text-base">
+                ⏰
+              </div>
+              <div>
+                <p class="font-semibold text-stone-900">เวลาเปิด - ปิดทำการ</p>
+                <p class="text-stone-700">ทุกวัน 08:00 - 17:00 น.</p>
+                <p class="text-xs text-rose-600 font-medium mt-0.5" data-i18n="closedTuesdayNote">
+                  * ปิดประจำสัปดาห์ทุกวันอังคาร
+                </p>
+              </div>
+            </div>
+
+            <!-- บรรยากาศ & สไตล์ -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center shrink-0 text-base">
+                🌾
+              </div>
+              <div>
+                <p class="font-semibold text-stone-900">เอกลักษณ์ร้าน</p>
+                <p class="text-stone-600">วิวทุ่งนาเขียวขจี ร่มรื่น เย็นสบาย ตกแต่งด้วยผ้าไหมและผ้าขาวม้าไทยอีสาน</p>
+              </div>
+            </div>
+
+            <!-- อาหารและเครื่องดื่ม -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-800 flex items-center justify-center shrink-0 text-base">
+                🥤
+              </div>
+              <div>
+                <p class="font-semibold text-stone-900">อาหาร & เครื่องดื่มแนะนำ</p>
+                <p class="text-stone-600">อาหารอีสานรสแซ่บ, ข้าวเหนียวกระติ๊บ, ข้าวสวยหอมมะลิ, น้ำสมุนไพรอัญชัน มะตูม มะนาว ใบเตย</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ปุ่มโทรและเปิดแผนที่ -->
+          <div class="flex flex-wrap gap-3">
+            <a 
+              href="tel:0810000000" 
+              class="px-5 py-2.5 rounded-full bg-isan-green hover:bg-emerald-800 text-white font-medium text-xs md:text-sm flex items-center gap-2 shadow-sm transition"
+            >
+              <span>📞</span>
+              <span data-i18n="callUs">โทรสอบถาม</span>
+            </a>
+            <button 
+              onclick="openQrModal()" 
+              class="px-5 py-2.5 rounded-full bg-amber-500 hover:bg-amber-600 text-stone-900 font-medium text-xs md:text-sm flex items-center gap-2 shadow-sm transition"
+            >
+              <span>🖨️</span>
+              <span data-i18n="btnPrint">พิมพ์ป้าย QR Code ตั้งโต๊ะ</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ฝั่งขวา: การ์ดตัวอย่าง QR Code สำหรับโต๊ะอาหาร -->
+        <div class="bg-gradient-to-br from-stone-50 to-emerald-50/40 p-6 rounded-2xl border border-stone-200 text-center flex flex-col items-center">
+          <div class="pha-khao-ma-badge px-3 py-1 rounded-full text-xs font-semibold text-stone-800 mb-3">
+            สแกนดูเมนูที่โต๊ะอาหาร
+          </div>
+          <div class="p-3 bg-white rounded-2xl shadow-md border border-stone-200 mb-3">
+            <img 
+              id="table-qr-container" 
+              src="" 
+              alt="Table QR Code" 
+              class="w-44 h-44 object-contain rounded-lg"
+            />
+          </div>
+          <p class="text-xs text-stone-500 max-w-xs">
+            ลูกค้านั่งที่โต๊ะ สามารถใช้กล้องมือถือสแกนดูรูป เมนู และราคาได้ทันที
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ส่วนท้ายเว็บ (Footer) -->
+  <footer class="mt-auto bg-stone-900 text-stone-400 text-xs py-8 border-t border-stone-800">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <!-- ลายผ้าขาวม้าประดับเล็กน้อย -->
+      <div class="w-24 h-1 mx-auto mb-4 bg-gradient-to-r from-red-600 via-amber-400 to-blue-600 rounded-full"></div>
+      
+      <p class="font-medium text-stone-300 text-sm mb-1" data-i18n="footerText">
+        บ้านทุ่งอาหารอีสาน • รสชาติอีสานแท้ บรรยากาศทุ่งนาร่มรื่น
+      </p>
+      <p class="text-stone-500">
+        เปิดบริการ 08:00 - 17:00 น. (หยุดทุกวันอังคาร) • รองรับภาษาไทยและภาษาอังกฤษ
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==============================================================
+       Modal: ดูรายละเอียดเมนูอาหารแบบขยายใหญ่ (Dish Detail Modal)
+       ============================================================== -->
+  <div id="dish-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-stone-200 animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]">
+      
+      <!-- ภาพอาหารขนาดใหญ่ -->
+      <div class="relative w-full h-64 bg-stone-100 overflow-hidden shrink-0">
+        <img 
+          id="modal-dish-img" 
+          src="" 
+          alt="" 
+          class="w-full h-full object-cover"
+        />
+        <button 
+          onclick="closeItemModal()" 
+          class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center text-lg font-bold transition cursor-pointer"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- รายละเอียดอาหาร -->
+      <div class="p-6 overflow-y-auto flex-1">
+        <div class="flex items-start justify-between gap-4 mb-2">
+          <div>
+            <h3 id="modal-dish-title" class="text-xl font-bold text-stone-900"></h3>
+            <p id="modal-dish-sub" class="text-xs text-stone-400 italic"></p>
+          </div>
+          <div class="text-right shrink-0">
+            <span id="modal-dish-price" class="text-2xl font-black text-isan-green"></span>
+          </div>
+        </div>
+
+        <!-- แท็ก & ระดับความเผ็ด -->
+        <div id="modal-dish-tags" class="flex flex-wrap items-center gap-1.5 my-3"></div>
+
+        <!-- คำอธิบายอาหาร -->
+        <p id="modal-dish-desc" class="text-sm text-stone-600 leading-relaxed py-2 border-t border-stone-100 my-2"></p>
+
+        <!-- ข้อความสั่งอาหาร -->
+        <div class="mt-4 p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs font-medium flex items-center gap-2">
+          <span id="modal-dish-notice"></span>
+        </div>
+      </div>
+
+      <!-- ปุ่มปิด Modal -->
+      <div class="p-4 bg-stone-50 border-t border-stone-100 flex justify-end">
+        <button 
+          onclick="closeItemModal()" 
+          class="px-5 py-2 text-xs font-semibold rounded-full bg-stone-200 hover:bg-stone-300 text-stone-700 transition cursor-pointer"
+          data-i18n="modalClose"
+        >
+          ปิด
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==============================================================
+       Modal: ป้าย QR Code สำหรับพิมพ์ตั้งโต๊ะ (Print Table Standee)
+       ============================================================== -->
+  <div id="qr-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-stone-200 p-6 flex flex-col items-center text-center">
+      
+      <!-- ขอบลายผ้าขาวม้าประดับหัวป้าย -->
+      <div class="w-full pha-khao-ma-border mb-4 rounded-full"></div>
+
+      <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl mb-2">
+        🌾
+      </div>
+
+      <h3 class="text-xl font-bold text-stone-900">บ้านทุ่งอาหารอีสาน</h3>
+      <p class="text-xs text-stone-500 mb-4">Baan Thung Isan Food • Table Menu</p>
+
+      <!-- กรอบ QR Code แบบลายผ้าขาวม้า -->
+      <div class="p-4 pha-khao-ma-badge rounded-2xl shadow-inner mb-4">
+        <div class="bg-white p-3 rounded-xl shadow-sm">
+          <img 
+            id="modal-qr-container" 
+            src="" 
+            alt="Printable QR Code" 
+            class="w-48 h-48 object-contain"
+          />
+        </div>
+      </div>
+
+      <p class="text-sm font-semibold text-stone-800 mb-1">
+        📲 สแกนเพื่อดูรูปและราคาอาหาร
+      </p>
+      <p class="text-xs text-stone-500 mb-6">
+        (Scan here to view menu & prices)
+      </p>
+
+      <!-- ปุ่มพิมพ์ / ปุ่มปิด -->
+      <div class="flex items-center gap-3 w-full">
+        <button 
+          onclick="printTableQr()" 
+          class="flex-1 py-2.5 rounded-full bg-isan-green hover:bg-emerald-800 text-white font-medium text-xs md:text-sm shadow-md transition"
+          data-i18n="btnPrint"
+        >
+          🖨️ พิมพ์ป้ายตั้งโต๊ะ
+        </button>
+        <button 
+          onclick="closeQrModal()" 
+          class="px-5 py-2.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 font-medium text-xs md:text-sm transition"
+          data-i18n="btnClose"
+        >
+          ปิด
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- นำเข้าข้อมูลเมนูและสคริปต์ควบคุม -->
+  <script src="menu-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* ==============================================================
+   บ้านทุ่งอาหารอีสาน - สไตล์และลวดลายเอกลักษณ์พื้นบ้าน
+   Baan Thung Isan - Custom Styling & Traditional Pattern Accents
+   ============================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --font-heading: 'Prompt', sans-serif;
+  --font-body: 'Sarabun', sans-serif;
+
+  /* โทนสีธรรมชาติทุ่งนา & ไม้ไผ่ */
+  --color-field-dark: #1b4332;
+  --color-field-primary: #2d6a4f;
+  --color-field-light: #52b788;
+  --color-field-soft: #d8f3dc;
+  
+  --color-bamboo: #d4a373;
+  --color-bamboo-dark: #8c5825;
+  --color-bamboo-light: #faedcd;
+  
+  --color-thai-red: #c1121f;
+  --color-thai-indigo: #1d3557;
+  --color-thai-gold: #f4a261;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #2b2d42;
+  background-color: #f8faf5;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
+/* ลวดลายผ้าขาวม้าไทยอีสาน (Pha Khao Ma Plaid Pattern) */
+.pha-khao-ma-border {
+  background: repeating-linear-gradient(
+    45deg,
+    #b91c1c 0px,
+    #b91c1c 12px,
+    #1e3a8a 12px,
+    #1e3a8a 24px,
+    #eab308 24px,
+    #eab308 30px,
+    #f8fafc 30px,
+    #f8fafc 38px
+  );
+  height: 8px;
+  width: 100%;
+}
+
+.pha-khao-ma-badge {
+  background: 
+    linear-gradient(90deg, rgba(185, 28, 28, 0.12) 50%, transparent 50%),
+    linear-gradient(rgba(30, 58, 138, 0.12) 50%, transparent 50%),
+    #fff;
+  background-size: 16px 16px;
+  border: 1px solid rgba(185, 28, 28, 0.3);
+}
+
+.pha-khao-ma-banner {
+  background-color: #7f1d1d;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.35) 10px, transparent 10px),
+    linear-gradient(rgba(234, 179, 8, 0.3) 10px, transparent 10px);
+  background-size: 20px 20px;
+}
+
+/* เอฟเฟกต์ลายสานไม้ไผ่ธรรมชาติ */
+.bamboo-texture {
+  background-color: #fefae0;
+  background-image: radial-gradient(#d4a373 0.75px, transparent 0.75px), radial-gradient(#d4a373 0.75px, #fefae0 0.75px);
+  background-size: 18px 18px;
+  background-position: 0 0, 9px 9px;
+}
+
+/* การ์ดเมนูและการเลื่อนภาพ */
+.menu-card {
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(212, 163, 115, 0.25);
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(45, 106, 79, 0.18);
+  border-color: rgba(45, 106, 79, 0.35);
+}
+
+/* สไตล์แถบหมวดหมู่เมนูด้านบน */
+.category-pill {
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.category-pill.active {
+  background-color: #2d6a4f;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(45, 106, 79, 0.3);
+}
+
+.category-pill:not(.active) {
+  background-color: #ffffff;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+.category-pill:not(.active):hover {
+  background-color: #e8f5e9;
+  color: #2d6a4f;
+  border-color: #a7d7b9;
+}
+
+/* ซ่อน Scrollbar ของหมวดหมู่แต่ยังเลื่อนได้ลื่นบนมือถือ */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ป้ายสถานะเปิด-ปิดร้าน */
+.status-badge-open {
+  background-color: #e8f5e9;
+  color: #1b4332;
+  border: 1px solid #81c784;
+}
+
+.status-badge-closed {
+  background-color: #ffebee;
+  color: #b71c1c;
+  border: 1px solid #e57373;
+}
+
+/* Pulse Animation จุดเขียวเมื่อร้านเปิด */
+.pulse-green {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+/* สไตล์ Modal สำหรับดูเมนูขยายใหญ่ */
+.modal-overlay {
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+/* สำหรับการพิมพ์ป้าย QR Code ตั้งโต๊ะ */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print-qr-modal, #print-qr-modal * {
+    visibility: visible;
+  }
+  #print-qr-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

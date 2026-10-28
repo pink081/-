@@ -1,0 +1,317 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>คู่มือการใช้งานเว็บไซต์ บ้านทุ่งอาหารอีสาน</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page {
+    size: A4;
+    margin: 2.5cm 2.5cm 2.5cm 2.5cm;
+    mso-header-margin: 35.4pt;
+    mso-footer-margin: 35.4pt;
+  }
+  body {
+    font-family: 'TH Sarabun New', 'Sarabun', 'Cordia New', 'Angsana New', sans-serif;
+    font-size: 16pt;
+    line-height: 1.6;
+    color: #2b2d42;
+  }
+  h1 {
+    font-size: 26pt;
+    font-weight: bold;
+    color: #1b4332;
+    text-align: center;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+  }
+  .subtitle {
+    font-size: 17pt;
+    color: #52b788;
+    text-align: center;
+    margin-bottom: 20pt;
+    font-weight: 500;
+  }
+  .doc-info {
+    text-align: center;
+    font-size: 14pt;
+    color: #666666;
+    margin-bottom: 25pt;
+    border-bottom: 1pt solid #dddddd;
+    padding-bottom: 12pt;
+  }
+  h2 {
+    font-size: 20pt;
+    font-weight: bold;
+    color: #2d6a4f;
+    border-bottom: 2pt solid #2d6a4f;
+    padding-bottom: 4pt;
+    margin-top: 24pt;
+    margin-bottom: 10pt;
+  }
+  h3 {
+    font-size: 17pt;
+    font-weight: bold;
+    color: #8c5825;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+  }
+  p, li {
+    font-size: 16pt;
+    margin-bottom: 6pt;
+  }
+  ul, ol {
+    margin-top: 4pt;
+    margin-bottom: 10pt;
+    padding-left: 25pt;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12pt 0;
+  }
+  th, td {
+    border: 1pt solid #cccccc;
+    padding: 8pt 10pt;
+    text-align: left;
+    font-size: 14pt;
+  }
+  th {
+    background-color: #e8f5e9;
+    color: #1b4332;
+    font-weight: bold;
+  }
+  .box-tip {
+    background-color: #fefae0;
+    border-left: 5pt solid #d4a373;
+    padding: 10pt 15pt;
+    margin: 14pt 0;
+  }
+  .box-note {
+    background-color: #e8f5e9;
+    border-left: 5pt solid #2d6a4f;
+    padding: 10pt 15pt;
+    margin: 14pt 0;
+  }
+  .badge {
+    background-color: #2d6a4f;
+    color: #ffffff;
+    padding: 2pt 8pt;
+    border-radius: 4pt;
+    font-size: 13pt;
+  }
+  .code-box {
+    background-color: #f8fafc;
+    border: 1pt solid #cbd5e1;
+    padding: 8pt 12pt;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13pt;
+    color: #0f172a;
+    line-height: 1.4;
+    margin: 8pt 0;
+  }
+  .pha-khao-ma-line {
+    height: 6pt;
+    background: #b91c1c;
+    margin-bottom: 15pt;
+  }
+</style>
+</head>
+<body>
+
+  <div class="pha-khao-ma-line"></div>
+
+  <h1>คู่มือการใช้งานเว็บไซต์</h1>
+  <h1>"บ้านทุ่งอาหารอีสาน"</h1>
+  <div class="subtitle">Baan Thung Isan Food - Website & Table QR Menu User Manual</div>
+  
+  <div class="doc-info">
+    <strong>สำหรับ:</strong> เจ้าของร้าน ผู้ดูแลระบบ และพนักงานหน้าร้าน &nbsp;|&nbsp; 
+    <strong>เวอร์ชัน:</strong> 1.0 (ตุลาคม 2026) &nbsp;|&nbsp; 
+    <strong>โฟลเดอร์ระบบ:</strong> C:\ร้านอาหาร081
+  </div>
+
+  <h2>1. บทนำและภาพรวมเว็บไซต์ (Overview)</h2>
+  <p>
+    เว็บไซต์ <strong>บ้านทุ่งอาหารอีสาน</strong> ถูกออกแบบมาเพื่อตอบโจทย์ 2 ด้านหลัก:
+  </p>
+  <ol>
+    <li><strong>หน้าเว็บแนะนำร้าน (Showcase):</strong> สำหรับโปรโมทร้าน แสดงบรรยากาศทุ่งนาร่มรื่น การตกแต่งด้วยผ้าไหมและผ้าขาวม้า เวลาเปิด-ปิด และข้อมูลการติดต่อ</li>
+    <li><strong>เมนูดิจิทัลประจำโต๊ะอาหาร (Table QR Menu - แบบดูอย่างเดียว):</strong> ลูกค้านั่งที่โต๊ะอาหาร สามารถใช้สมาร์ตโฟนสแกน QR Code เพื่อดูรูปอาหาร ขนาดใหญ่ ราคาชัดเจน วัตถุดิบ และระดับความเผ็ด 2 ภาษา (ไทย/อังกฤษ) ก่อนสั่งอาหารกับพนักงาน</li>
+  </ol>
+
+  <div class="box-note">
+    <strong>🌿 ข้อมูลสำคัญของร้าน:</strong><br>
+    • <strong>เวลาทำการ:</strong> เปิดบริการทุกวัน เวลา 08:00 - 17:00 น.<br>
+    • <strong>วันหยุดประจำสัปดาห์:</strong> หยุดทุกวันอังคาร (ระบบมีป้ายแจ้งเตือนอัตโนมัติ)<br>
+    • <strong>รูปแบบการทำงาน:</strong> แบบที่ 1 (สแกนดูเมนูอย่างเดียว สะดวก ไม่ต้องโหลดแอป)
+  </div>
+
+  <h2>2. โครงสร้างไฟล์ในระบบ (File Structure)</h2>
+  <p>ไฟล์ทั้งหมดจัดเก็บอยู่ที่โฟลเดอร์ <code>C:\ร้านอาหาร081\</code> โดยมีหน้าที่ดังนี้:</p>
+  <table>
+    <tr>
+      <th style="width: 25%;">ชื่อไฟล์</th>
+      <th style="width: 35%;">หน้าที่การทำงาน</th>
+      <th style="width: 40%;">คำแนะนำ</th>
+    </tr>
+    <tr>
+      <td><strong>index.html</strong></td>
+      <td>หน้าหลักของเว็บไซต์</td>
+      <td>เปิดดูได้ทันทีด้วย Chrome, Edge หรือเบราว์เซอร์ใด ๆ</td>
+    </tr>
+    <tr>
+      <td><strong>styles.css</strong></td>
+      <td>ไฟล์กำหนดรูปแบบ ดีไซน์ และลวดลายผ้าขาวม้า</td>
+      <td>ควบคุมสี โทนสีทุ่งนา แถบเมนู และแอนิเมชัน</td>
+    </tr>
+    <tr>
+      <td><strong>script.js</strong></td>
+      <td>ระบบการทำงานและการคำนวณเวลา</td>
+      <td>สลับภาษา TH/EN, คำนวณเวลาเปิด-ปิดร้าน, ระบบค้นหาเมนู</td>
+    </tr>
+    <tr>
+      <td><strong>menu-data.js</strong></td>
+      <td>ฐานข้อมูลเมนูอาหาร รูปภาพ และราคา</td>
+      <td><strong>ไฟล์หลักที่ร้านค้าใช้ปรับราคาหรือเพิ่มเมนูใหม่</strong></td>
+    </tr>
+    <tr>
+      <td><strong>README.md</strong></td>
+      <td>เอกสารสรุปรายละเอียดเบื้องต้น</td>
+      <td>สำหรับดูข้อมูลสรุปในโปรแกรมแก้ไขโค้ด</td>
+    </tr>
+  </table>
+
+  <h2>3. วิธีการเปิดใช้งานเว็บไซต์ (How to Open)</h2>
+  <h3>3.1 การเปิดใช้งานบนคอมพิวเตอร์</h3>
+  <ol>
+    <li>เปิดโฟลเดอร์ <code>C:\ร้านอาหาร081</code> บนคอมพิวเตอร์ของคุณ</li>
+    <li>ดับเบิลคลิกที่ไฟล์ <strong>index.html</strong></li>
+    <li>หน้าเว็บไซต์จะเปิดขึ้นใน Google Chrome หรือ Microsoft Edge โดยอัตโนมัติ <em>(ไม่ต้องติดตั้งโปรแกรมเซิร์ฟเวอร์หรือต่ออินเทอร์เน็ตก็สามารถเปิดดูโครงสร้างได้)</em></li>
+  </ol>
+
+  <h3>3.2 การจำลองดูมุมมองมือถือ (Mobile View)</h3>
+  <p>เนื่องจากลูกค้าส่วนใหญ่จะสแกนเปิดดูผ่านโทรศัพท์มือถือ คุณสามารถทดสอบมุมมองมือถือบนคอมพิวเตอร์ได้ดังนี้:</p>
+  <ol>
+    <li>เมื่อเปิดหน้าเว็บในเบราว์เซอร์แล้ว ให้กดปุ่ม <strong>F12</strong> บนคีย์บอร์ด</li>
+    <li>กดปุ่มไอคอนรูปมือถือ/แท็บเล็ต <em>(Toggle device toolbar หรือกด Ctrl + Shift + M)</em></li>
+    <li>จะเห็นหน้าจอเหมือนลูกค้าเปิดจากมือถือจริง ๆ</li>
+  </ol>
+
+  <h2>4. แนะนำฟังก์ชันการใช้งานของเว็บไซต์ (Features)</h2>
+
+  <h3>4.1 ปุ่มสลับภาษา ไทย - อังกฤษ (TH / EN)</h3>
+  <ul>
+    <li>อยู่ที่มุมขวาบนของหน้าเว็บ (ปุ่ม 🇹🇭 TH และ 🇬🇧 EN)</li>
+    <li>เมื่อคลิกสลับภาษา: ชื่อร้าน, คำโปรย, สถานะเปิด-ปิด, หมวดหมู่, ชื่ออาหารทุกรายการ, คำอธิบายวัตถุดิบ และป้ายกำกับ จะเปลี่ยนเป็นภาษาอังกฤษทันที</li>
+    <li>ระบบจะจำภาษาที่ลูกค้าเลือกไว้ แม้จะรีเฟรชหน้าเว็บก็ตาม</li>
+  </ul>
+
+  <h3>4.2 ป้ายแสดงสถานะเปิด - ปิดร้านตามเวลาจริง (Real-Time Status)</h3>
+  <ul>
+    <li><strong>เวลาเปิด: 08:00 - 17:00 น.</strong></li>
+    <li><strong>หากอยู่ในเวลาทำการ:</strong> แสดงป้ายสีเขียว <span style="color:#1b4332; font-weight:bold;">🟢 เปิดให้บริการตอนนี้ (08:00 - 17:00 น.)</span> พร้อมไฟกะพริบ</li>
+    <li><strong>หากอยู่นอกเวลาทำการ:</strong> แสดงป้ายสีแดง <span style="color:#b91c1c; font-weight:bold;">🔴 ร้านปิดอยู่</span></li>
+    <li><strong>หากเป็นวันอังคาร:</strong> แสดงป้ายแจ้งเตือนพิเศษ <span style="color:#b91c1c; font-weight:bold;">🔴 วันนี้วันอังคาร ร้านหยุดประจำสัปดาห์</span> ทันที</li>
+  </ul>
+
+  <h3>4.3 แถบเลือกหมวดหมู่อาหารและการค้นหา (Category & Live Search)</h3>
+  <ul>
+    <li><strong>แถบหมวดหมู่:</strong> กดเลื่อนซ้าย-ขวาได้ง่าย แบ่งเป็น:
+      <ul>
+        <li>ทั้งหมด (All)</li>
+        <li>ส้มตำ & ลาบ (Som Tum & Larb)</li>
+        <li>ย่าง & ทอด (Grilled & Fried)</li>
+        <li>ต้มแซ่บ & แกง (Soups & Curries)</li>
+        <li>ข้าวสวย & ข้าวเหนียว (Rice & Sticky Rice)</li>
+        <li>เครื่องดื่มสมุนไพร & น้ำดื่ม (Herbal Drinks & Water)</li>
+      </ul>
+    </li>
+    <li><strong>ช่องค้นหาแบบสด (Live Search):</strong> ลูกค้าสามารถพิมพ์ชื่อเมนู หรือวัตถุดิบ เช่น "อัญชัน", "ข้าวสวย", "ไก่ย่าง", "Som Tum" ระบบจะกรองเมนูให้ทันทีที่พิมพ์</li>
+  </ul>
+
+  <h3>4.4 การดูรูปใหญ่และรายละเอียด (Dish Details Modal)</h3>
+  <ul>
+    <li>เมื่อลูกค้าแตะที่การ์ดอาหารใบใดก็ตาม จะมีหน้าต่างป๊อปอัปขยายใหญ่ขึ้นมา</li>
+    <li>แสดงรูปภาพความละเอียดสูง, ชื่อ 2 ภาษา, ราคาบาท (฿), ระดับความเผ็ด 🌶️, รายละเอียดวัตถุดิบ</li>
+    <li>มีข้อความแจ้งเตือน: <em>"📌 สั่งเมนูนี้กับพนักงานเสิร์ฟได้เลยครับ"</em></li>
+  </ul>
+
+  <h2>5. คู่มือสำหรับเจ้าของร้าน: การพิมพ์ป้าย QR Code ตั้งโต๊ะ (Print Table Standee)</h2>
+  <div class="box-tip">
+    <strong>💡 ขั้นตอนการทำป้าย QR Code ตั้งโต๊ะอาหาร:</strong><br>
+    1. เปิดหน้าเว็บ <code>index.html</code><br>
+    2. คลิกที่ปุ่ม <strong>"📱 ป้าย QR ตั้งโต๊ะ"</strong> หรือเลื่อนลงไปที่ส่วนล่างของหน้าเว็บ<br>
+    3. หน้าต่างป้ายตั้งโต๊ะจะปรากฏขึ้นมา พร้อมกรอบลายผ้าขาวม้า โลโก้รวงข้าว และ QR Code<br>
+    4. กดปุ่ม <strong>"🖨️ พิมพ์ป้ายตั้งโต๊ะ"</strong><br>
+    5. หน้าต่างเครื่องพิมพ์จะเปิดขึ้น สามารถสั่งพิมพ์ลงกระดาษ หรือใส่แท่นอะคริลิกตั้งโต๊ะอาหารได้ทันที
+  </div>
+
+  <h2>6. วิธีแก้ไขเมนูและปรับราคาด้วยตนเอง (How to Edit Menu)</h2>
+  <p>
+    ข้อมูลเมนูทั้งหมดถูกแยกเก็บไว้ในไฟล์ <strong>menu-data.js</strong> อย่างเป็นระเบียบ ท่านสามารถเปิดแก้ไขได้ด้วยโปรแกรม <strong>Notepad</strong> หรือ <strong>VS Code</strong>:
+  </p>
+
+  <h3>6.1 การปรับราคาอาหาร</h3>
+  <p>เปิดไฟล์ <code>menu-data.js</code> ค้นหาชื่อเมนูที่ต้องการ แล้วเปลี่ยนตัวเลขตรง <code>price:</code> เช่น:</p>
+  <div class="code-box">
+    // ตัวอย่างการเปลี่ยนราคาส้มตำไทย จาก 60 เป็น 65 บาท<br>
+    name: { th: "ส้มตำไทยรสเด็ด", en: "Som Tum Thai" },<br>
+    price: <strong>65</strong>, &nbsp;&nbsp;&lt;-- แก้ไขตัวเลขตรงนี้ แล้วกดบันทึก (Save)
+  </div>
+
+  <h3>6.2 โครงสร้างการเพิ่มเมนูใหม่</h3>
+  <p>หากต้องการเพิ่มเมนูใหม่ สามารถก๊อปปี้บล็อกด้านล่างนี้ไปวางต่อในไฟล์ <code>menu-data.js</code>:</p>
+  <div class="code-box">
+    {<br>
+    &nbsp;&nbsp;id: "item-18",<br>
+    &nbsp;&nbsp;category: "somtum", &nbsp;&nbsp;// หมวดหมู่: somtum, grilled, soup, rice, drinks<br>
+    &nbsp;&nbsp;name: { th: "ตำแตงไข่ต้ม", en: "Cucumber Salad with Boiled Egg" },<br>
+    &nbsp;&nbsp;desc: {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;th: "แตงกวาเนื้อกรอบสด ตำครบรส เสิร์ฟคู่ไข่ต้มยางมะตูม",<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;en: "Crisp cucumber salad served with soft boiled egg."<br>
+    &nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;price: 70,<br>
+    &nbsp;&nbsp;spicyLevel: 2, &nbsp;&nbsp;// ระดับความเผ็ด: 0 (ไม่เผ็ด), 1, 2, 3 (เผ็ดมาก)<br>
+    &nbsp;&nbsp;recommended: true, &nbsp;&nbsp;// true = เมนูแนะนำ, false = ทั่วไป<br>
+    &nbsp;&nbsp;image: "ลิงก์รูปภาพของเมนู",<br>
+    &nbsp;&nbsp;tags: { th: ["แซ่บ", "เมนูใหม่"], en: ["New", "Spicy"] }<br>
+    },
+  </div>
+
+  <h2>7. การนำเว็บไซต์ขึ้นสู่อินเทอร์เน็ต (Deployment Guide)</h2>
+  <p>
+    เพื่อให้ลูกค้าสามารถสแกน QR Code จากที่ร้านได้จริง เว็บไซต์ต้องถูกนำขึ้นไปอยู่บนอินเทอร์เน็ต (Web Hosting) ซึ่งเว็บไซต์นี้เป็น <strong>Static Website</strong> ที่โหลดไวมาก สามารถนำขึ้นบริการฟรีได้หลากหลายวิธี:
+  </p>
+  <ol>
+    <li><strong>Netlify (แนะนำ สะดวกที่สุด):</strong> เข้าเว็บไซต์ netlify.com ลากโฟลเดอร์ <code>ร้านอาหาร081</code> ไปวางในเว็บ จะได้ลิงก์ร้านอาหารทันทีฟรี</li>
+    <li><strong>Vercel หรือ GitHub Pages:</strong> อัปโหลดโค้ดขึ้น GitHub แล้วเปิดฟังก์ชัน Pages ใช้เวลาไม่เกิน 2 นาที</li>
+    <li><strong>เว็บโฮสติ้งส่วนตัว / จดชื่อโดเมน:</strong> เช่น <code>www.baanthung-isan.com</code> โดยอัปโหลดไฟล์ทั้ง 4 ไฟล์ขึ้นโฟลเดอร์ <code>public_html</code> ผ่าน FTP</li>
+  </ol>
+
+  <div class="box-note">
+    เมื่อนำเว็บขึ้นอินเทอร์เน็ตแล้ว ให้เปิดหน้าเว็บ แล้วกดปุ่ม <strong>"📱 ป้าย QR ตั้งโต๊ะ"</strong> อีกครั้งเพื่อพิมพ์ QR Code ที่เป็นลิงก์จริงของร้าน นำไปติดบนโต๊ะอาหารได้เลยครับ!
+  </div>
+
+  <h2>8. การดูแลรักษาและข้อแนะนำเพิ่มเติม (Tips)</h2>
+  <ul>
+    <li><strong>การเปลี่ยนเบอร์โทรและแผนที่:</strong> สามารถเข้าไปเปลี่ยนเบอร์โทรในไฟล์ <code>index.html</code> (ค้นหา <code>tel:0810000000</code>) ให้เป็นเบอร์จริงของร้าน</li>
+    <li><strong>การเปลี่ยนรูปภาพอาหาร:</strong> สามารถถ่ายรูปอาหารจริงในร้าน แล้วนำรูปมาวางในโฟลเดอร์ จากนั้นเปลี่ยนลิงก์ใน <code>menu-data.js</code> เป็นชื่อไฟล์รูปภาพ เช่น <code>image: "somtum.jpg"</code></li>
+  </ul>
+
+  <div class="pha-khao-ma-line" style="margin-top: 30pt;"></div>
+  <p style="text-align: center; color: #888888; font-size: 13pt;">
+    จัดทำขึ้นสำหรับ ร้านบ้านทุ่งอาหารอีสาน • ลิขสิทธิ์ระบบ © 2026
+  </p>
+
+</body>
+</html>
